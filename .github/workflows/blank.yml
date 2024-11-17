@@ -5,9 +5,6 @@ on:
     - cron: '0 0 * * *' # Tous les jours à minuit UTC
   workflow_dispatch: # Déclenchement manuel
 
-env:
-  FILE_NAME: partners.json
-
 permissions:
   contents: write # Autoriser les actions à pousser des changements
 
@@ -21,7 +18,8 @@ jobs:
 
     - name: Fetch partners data
       run: |
-        curl -s https://app.hackintheshell.org/api/partners/get_all -o $FILE_NAME
+        curl -s https://app.hackintheshell.org/api/partners/get_all -o partners.json
+        cat partners.json
 
     - name: Commit and push changes
       run: |
