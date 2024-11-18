@@ -1,8 +1,8 @@
 name: Update Partners JSON
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # Tous les jours à minuit UTC
+  #schedule:
+  #  - cron: '0 0 * * 1' # Tous les jours à minuit UTC
   workflow_dispatch: # Déclenchement manuel
 
 permissions:
